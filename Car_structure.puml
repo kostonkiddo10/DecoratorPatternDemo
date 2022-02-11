@@ -1,0 +1,255 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": ""
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false // root node is included
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "Car"
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1135471697 { 
+   	label=CompactSUV
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   CompactSUV1135471697[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)CompactSUV</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ cost(): double</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_191901440 { 
+   	label=Sunroof
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Sunroof191901440[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Sunroof</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   cost: double [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ cost(): double</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_2016134218 { 
+   	label=CarOptions
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   CarOptions2016134218[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)CarOptions</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   orderedCar: Car [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_2089179250 { 
+   	label=HiFiAudio
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   HiFiAudio2089179250[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)HiFiAudio</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   cost: double [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ cost(): double</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_246571490 { 
+   	label=Economy
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Economy246571490[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Economy</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ cost(): double</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_67508 { 
+   	label=Car
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Car67508[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Car</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   description: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ cost(): double</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_80469239 { 
+   	label=SportsWheels
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   SportsWheels80469239[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)SportsWheels</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   cost: double [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ cost(): double</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_82484 { 
+   	label=SUV
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   SUV82484[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)SUV</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ cost(): double</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+'edges    
+Car67508 -> CarOptions2016134218[arrowhead=none, arrowtail=empty, dir=both];
+Car67508 -> CompactSUV1135471697[arrowhead=none, arrowtail=empty, dir=both];
+Car67508 -> Economy246571490[arrowhead=none, arrowtail=empty, dir=both];
+Car67508 -> SUV82484[arrowhead=none, arrowtail=empty, dir=both];
+CarOptions2016134218 -> Car67508[label="orderedCar
+[0..1]"];
+CarOptions2016134218 -> HiFiAudio2089179250[arrowhead=none, arrowtail=empty, dir=both];
+CarOptions2016134218 -> SportsWheels80469239[arrowhead=none, arrowtail=empty, dir=both];
+CarOptions2016134218 -> Sunroof191901440[arrowhead=none, arrowtail=empty, dir=both];
+    
+}
+@enduml
